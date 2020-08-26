@@ -7,7 +7,5 @@ namespace AGPCInfo.Client.Library.Helpers
     public interface IAPIHelper
     {
         HttpClient ApiClient { get; }
-
-        Task CreatePCConfigurationAsync(ThisPCClientModel pc);
     }
 }

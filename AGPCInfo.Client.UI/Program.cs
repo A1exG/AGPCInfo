@@ -1,4 +1,5 @@
-﻿using AGPCInfo.Client.Library.Helpers;
+﻿using AGPCInfo.Client.Library.Api;
+using AGPCInfo.Client.Library.Helpers;
 using AGPCInfo.Client.Library.Model;
 using System;
 using System.Net;
@@ -12,15 +13,66 @@ namespace AGPCInfo.Client.UI
     {
         static void Main(string[] args)
         {
-            ConfigHelper config = new ConfigHelper();
-            PCInfoHelper infoHelper = new PCInfoHelper(config);
-            PCConfiguration pcConfiguration = new PCConfiguration(infoHelper);
+            Console.WriteLine("Что будем делать?");
+            Console.WriteLine("М - Настройка ПК");
+            Console.WriteLine("C - Конфигурация");
+            Console.WriteLine("C - Браузер");
+            var key = Console.ReadKey();
+            switch (key.Key)
+            {
+                case ConsoleKey.M:
+                    Console.WriteLine("Настройка ПК");
 
-            var pc = pcConfiguration.GetConfiguration();
+                    Console.ReadLine();
+                    break;
+                case ConsoleKey.C:
+                    Console.WriteLine("Конфигурация");
+                    Console.WriteLine("S - Отправить конфигурацию");
 
-            APIHelper apiHelper = new APIHelper();
+                    var sendKey = Console.ReadKey();
+                    switch (sendKey.Key)
+                    {
+                        case ConsoleKey.S:
+                            ConfigHelper config = new ConfigHelper();
+                            PCInfoHelper infoHelper = new PCInfoHelper(config);
+                            PCConfiguration pcConfiguration = new PCConfiguration(infoHelper);
 
-            Task task = apiHelper.CreatePCConfigurationAsync(pc);
+                            var pc = pcConfiguration.GetConfiguration();
+
+                            APIHelper helper = new APIHelper();
+                            PCEndpoint endpoint = new PCEndpoint(helper);
+
+                            Task task = endpoint.CreatePCConfigurationAsync(pc);
+
+
+                            Console.WriteLine("Данные отправлены!");
+                            Console.ReadLine();
+                            break;
+                        
+                        default:
+                            Console.WriteLine("Что-то не так наверно");
+                            break;
+                    }
+
+                    Console.ReadLine();
+                    break;
+                case ConsoleKey.Clear:
+                    Console.WriteLine("Браузер");
+
+                    
+
+
+
+                    Console.ReadLine();
+                    break;
+                
+                default:
+                    break;
+            }
+
+            
+
+
         }
     }
 }

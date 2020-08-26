@@ -32,16 +32,5 @@ namespace AGPCInfo.Client.Library.Helpers
             _apiClient.DefaultRequestHeaders.Accept.Clear();
             _apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
-
-        public async Task CreatePCConfigurationAsync(ThisPCClientModel pc)
-        {
-            using (HttpResponseMessage response = await _apiClient.PostAsJsonAsync("api/pc", pc))
-            {
-                if (response.IsSuccessStatusCode == false)
-                {
-                    throw new Exception(response.ReasonPhrase);
-                }
-            }
-        }
     }
 }

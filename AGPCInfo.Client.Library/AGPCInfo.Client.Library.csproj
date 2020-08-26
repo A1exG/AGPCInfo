@@ -49,9 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\APIHelper.cs" />
+    <Compile Include="Api\APIHelper.cs" />
+    <Compile Include="Api\PCEndpoint.cs" />
     <Compile Include="Helpers\ConfigHelper.cs" />
-    <Compile Include="Helpers\IAPIHelper.cs" />
+    <Compile Include="Api\IAPIHelper.cs" />
     <Compile Include="Helpers\IConfigHelper.cs" />
     <Compile Include="Helpers\IPCInfoHelper.cs" />
     <Compile Include="Helpers\PCConfiguration.cs" />
