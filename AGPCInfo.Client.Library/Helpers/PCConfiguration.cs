@@ -1,17 +1,11 @@
 ﻿using AGPCInfo.Client.Library.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Management;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AGPCInfo.Client.Library.Helpers
 {
-    public class PCConfiguration
+    public class PCConfiguration : IPCConfiguration
     {
         private PCInfoHelper _pcInfoHelper;
-        public PCConfiguration (PCInfoHelper pcInfoHelper)
+        public PCConfiguration(PCInfoHelper pcInfoHelper)
         {
             _pcInfoHelper = pcInfoHelper;
         }

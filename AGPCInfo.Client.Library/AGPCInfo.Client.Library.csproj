@@ -34,13 +34,13 @@
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,14 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\APIHelper.cs" />
-    <Compile Include="Api\PCEndpoint.cs" />
     <Compile Include="Helpers\ConfigHelper.cs" />
-    <Compile Include="Api\IAPIHelper.cs" />
     <Compile Include="Helpers\IConfigHelper.cs" />
+    <Compile Include="Helpers\IPCConfiguration.cs" />
     <Compile Include="Helpers\IPCInfoHelper.cs" />
+    <Compile Include="Helpers\IWriterInFile.cs" />
     <Compile Include="Helpers\PCConfiguration.cs" />
     <Compile Include="Helpers\PCInfoHelper.cs" />
+    <Compile Include="Helpers\WriterInFile.cs" />
     <Compile Include="Model\CPUClientModel.cs" />
     <Compile Include="Model\DriveClientModel.cs" />
     <Compile Include="Model\GPUClientModel.cs" />

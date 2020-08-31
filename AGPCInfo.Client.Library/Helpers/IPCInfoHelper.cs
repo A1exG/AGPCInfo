@@ -7,7 +7,7 @@ namespace AGPCInfo.Client.Library.Helpers
     {
         CPUClientModel GetCPU();
         List<DriveClientModel> GetDrive();
-        GPUClientModel GetGPU();
+        List<GPUClientModel> GetGPU();
         OperativeSystemClientModel GetOperativeSystemName();
         RAMClientModel GetRam();
     }

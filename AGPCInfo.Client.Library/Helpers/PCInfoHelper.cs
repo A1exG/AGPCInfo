@@ -17,6 +17,7 @@ namespace AGPCInfo.Client.Library.Helpers
 
         public OperativeSystemClientModel GetOperativeSystemName()
         {
+
             ManagementObjectSearcher objectSearcher = new ManagementObjectSearcher(_config.GetKey("QueryOS"));
 
             OperativeSystemClientModel os = new OperativeSystemClientModel();
@@ -28,19 +29,6 @@ namespace AGPCInfo.Client.Library.Helpers
             return os;
         }
 
-        public GPUClientModel GetGPU()
-        {
-            ManagementObjectSearcher objectSearcher = new ManagementObjectSearcher(_config.GetKey("QueryGPU"));
-
-            GPUClientModel gpu = new GPUClientModel();
-
-            foreach (ManagementObject obj in objectSearcher.Get())
-            {
-                gpu.GPUName = obj["Name"].ToString();
-                gpu.GPUDriverVersion = obj["DriverVersion"].ToString();
-            }
-            return gpu;
-        }
 
         public CPUClientModel GetCPU()
         {
@@ -73,19 +61,42 @@ namespace AGPCInfo.Client.Library.Helpers
         public List<DriveClientModel> GetDrive()
         {
             List<DriveClientModel> output = new List<DriveClientModel>();
-
-            DriveClientModel drive = new DriveClientModel();
+            
 
             DriveInfo[] allDrives = DriveInfo.GetDrives();
+
             foreach (DriveInfo d in allDrives)
             {
                 if (d.IsReady == true && d.DriveType == DriveType.Fixed)
                 {
+                    DriveClientModel drive = new DriveClientModel();
+
                     drive.VolumeLabel = d.Name;
                     drive.TotalSize = SizeSuffix(d.TotalSize).ToString();
                     drive.TotalFreeSpace = SizeSuffix(d.TotalFreeSpace).ToString();
+
                     output.Add(drive);
                 }
+            }
+            return output;
+        }
+
+        public List<GPUClientModel> GetGPU()
+        {
+            List<GPUClientModel> output = new List<GPUClientModel>();
+
+            ManagementObjectSearcher objectSearcher = new ManagementObjectSearcher(_config.GetKey("QueryGPU"));
+
+            
+
+            foreach (ManagementObject obj in objectSearcher.Get())
+            {
+                GPUClientModel gpu = new GPUClientModel();
+
+                gpu.GPUName = obj["Name"].ToString();
+                gpu.GPUDriverVersion = obj["DriverVersion"].ToString();
+
+                output.Add(gpu);
             }
             return output;
         }

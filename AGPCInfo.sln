@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGPCInfo.Client.UI", "AGPCI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGPCInfo.Client.Library", "AGPCInfo.Client.Library\AGPCInfo.Client.Library.csproj", "{22D70794-E514-48F9-A1ED-D471DD440695}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGPCInfo.DataManager.API", "AGPCInfo.DataManager.API\AGPCInfo.DataManager.API.csproj", "{22B0BA6F-EA20-4F0F-A1B2-E17ED4F3D46B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGPCInfo.DataManager.Library", "AGPCInfo.DataManager.Library\AGPCInfo.DataManager.Library.csproj", "{57B86505-BB6F-4022-8466-0D6338734A13}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,14 +21,6 @@ Global
 		{22D70794-E514-48F9-A1ED-D471DD440695}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22D70794-E514-48F9-A1ED-D471DD440695}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22D70794-E514-48F9-A1ED-D471DD440695}.Release|Any CPU.Build.0 = Release|Any CPU
-		{22B0BA6F-EA20-4F0F-A1B2-E17ED4F3D46B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22B0BA6F-EA20-4F0F-A1B2-E17ED4F3D46B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{22B0BA6F-EA20-4F0F-A1B2-E17ED4F3D46B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{22B0BA6F-EA20-4F0F-A1B2-E17ED4F3D46B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{57B86505-BB6F-4022-8466-0D6338734A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{57B86505-BB6F-4022-8466-0D6338734A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{57B86505-BB6F-4022-8466-0D6338734A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{57B86505-BB6F-4022-8466-0D6338734A13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
